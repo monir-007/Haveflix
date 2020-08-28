@@ -1,0 +1,413 @@
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  box-sizing: border-box;
+}
+h3 {
+  color: #e5e5e5;
+}
+a {
+  text-decoration: none;
+  color: #135cb1;
+}
+
+a h3:hover {
+  color: #fff;
+}
+.wrapper {
+  min-width: 1050px;
+  min-height: 100%;
+  background-color: #141414;
+}
+
+.signInContainer {
+  background-color: #efefee;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.column {
+  background-color: #fff;
+  min-height: 300px;
+  max-height: 100%;
+  width: 450px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 3px;
+  padding: 20px 35px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+.column form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 24px;
+}
+
+.column form input[type="text"],
+.column form input[type="email"],
+.column form input[type="password"] {
+  font-size: 14px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 1px solid #dedede;
+}
+
+.column form input[type="submit"] {
+  background-color: #4285f4;
+  color: #fff;
+  height: 36px;
+  width: 88px;
+  border: none;
+  border-radius: 3px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.column .header {
+  padding: 20px 0;
+}
+.column h3 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  margin: 0;
+  padding-top: 16px;
+  color: #000;
+}
+
+.column .header span {
+  font-size: 14px;
+}
+
+.column .header img {
+  width: 100px;
+}
+.signInMessage {
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+}
+.signInSpan {
+  color: red;
+  transition: 0.03s;
+}
+.errorMessage {
+  color: #f00;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+.previewImage,
+.previewVideo {
+  width: 100%;
+}
+
+.previewContainer {
+  position: relative;
+  display: flex;
+}
+
+.previewContainer.small {
+  width: 230px;
+  height: 129px;
+  margin-right: 4px;
+  display: inline-flex;
+}
+.previewContainer.small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.previewOverlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+}
+.previewOverlay .mainDetails h3 {
+  color: #fff;
+  font-size: 40px;
+  margin: 15px 0;
+}
+
+.previewOverlay .mainDetails h4 {
+  color: #fff;
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.previewOverlay .mainDetails {
+  position: relative;
+  top: 35%;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.mainDetails button {
+  background-color: rgba(51, 51, 51, 0.4);
+  color: #fff;
+  border: none;
+  min-width: 150px;
+  padding: 0 38px;
+  height: 50px;
+  max-height: 50px;
+  font-size: 18px;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+button i {
+  color: inherit;
+  padding-right: 4px;
+}
+.mainDetails button:hover {
+  background-color: #e6e6e6;
+  color: #000;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.entities,
+.videos {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.previewCategories {
+  padding: 0 40px;
+}
+.previewCategories h2 {
+  color: #dededeab;
+}
+.errorBanner {
+  position: absolute;
+  top: 30%;
+  width: 70%;
+  text-align: center;
+  font-size: 20px;
+  margin-left: 200px;
+  padding: 20px 20px;
+  border-radius: 3px 3px 3px 3px;
+  color: #e6e6e6;
+  background-color: #f44336;
+}
+.season {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 50px;
+}
+
+.episodeContainer {
+  display: inline-flex;
+  justify-content: center;
+  margin-right: 4px;
+}
+.episodeContainer .contents {
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+  position: relative;
+}
+.episodeContainer img {
+  width: 230px;
+  height: 129px;
+  object-fit: cover;
+}
+.episodeContainer .videoInfo h4,
+.episodeContainer .videoInfo span {
+  color: #fff;
+  width: 100%;
+  white-space: normal;
+}
+.episodeContainer .videoInfo {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.previewCategories.noScroll .category .entities {
+  white-space: normal;
+}
+.watchContainer video {
+  width: 100%;
+}
+.videoControls {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.videoControls h1 {
+  color: #fff;
+}
+.videoControls button {
+  font-size: 50px;
+  padding: 30px;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+}
+.upNext {
+  height: 100%;
+  justify-content: center;
+}
+.upNextContainer button {
+  padding: 0;
+}
+.upNextContainer h2,
+.upNextContainer h3 {
+  color: #fff;
+}
+.watchNav {
+  z-index: 2;
+}
+.seen {
+  color: #0cad6a;
+  font-size: 20px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.top-bar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  height: 70px;
+  box-sizing: border-box;
+  min-width: 1050px;
+  transition: background-color 200ms linear;
+}
+.top-bar.scrolled {
+  background-color: #141414;
+  transition: background-color 200ms linear;
+}
+.logo-container {
+  height: 40px;
+}
+.logo-container img {
+  height: 100%;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+.nav-links a {
+  color: #fff;
+  font-size: 15px;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.right-items {
+  text-align: right;
+  flex: 1;
+}
+
+.right-items i {
+  color: rgba(224, 8, 8, 0.897);
+  font-size: 20px;
+  margin-left: 10px;
+}
+.textbox-container {
+  padding: 100px 50px;
+}
+
+.search-input {
+  height: 50px;
+  width: 650px;
+  border: 1px solid rgba(209, 9, 9, 0.877);
+  background-color: transparent;
+  color: #fff;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.settings-container {
+  padding-top: 60px;
+  background-color: transparent;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 200ms linear;
+}
+.settings-container .scrolled {
+  background-color: #141414;
+  transition: background-color 200ms linear;
+}
+.settings-container h2 {
+  color: #e6e6e6;
+  margin-left: 120px;
+}
+.settings-container .form-section {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  padding-bottom: 10px;
+}
+
+.settings-container form input[type="text"],
+.settings-container form input[type="email"],
+.settings-container form input[type="password"] {
+  width: 300px;
+  height: 30px;
+  font-size: 15px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 3px;
+  padding: 0 5px;
+  margin-left: 120px;
+}
+.settings-container form input[type="submit"] {
+  background-color: rgba(247, 30, 30, 0.781);
+  margin-left: 120px;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+}
+.alert-success,
+.alert-error {
+  margin: 10px 0;
+}
+.alert-success {
+  color: #0cad6a;
+  margin-left: 120px;
+}
+
+.alert-error {
+  color: #f00;
+  margin-left: 120px;
+}
+
+.form-section h3 {
+  padding: 0;
+  color: rgb(241, 233, 233);
+  font-size: 20px;
+  margin-left: 120px;
+}
+.form-section a {
+  margin-left: 140px;
+  color: rgba(238, 20, 20, 0.753);
+}
+.form-section a i {
+  color: rgba(48, 151, 247, 0.562);
+  font-size: 30px;
+}
